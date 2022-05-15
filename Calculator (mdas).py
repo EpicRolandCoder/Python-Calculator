@@ -1,19 +1,25 @@
+'''numsent = ["2", "+", "8", "/", "2", "*", "4"]
+
+   numsent[numsent.index("/")-1] = int(numsent[numsent.index("/")-1]) / int(numsent[numsent.index("/")+1])
+   numsent.pop(numsent.index("/")+1)
+   numsent.pop(numsent.index("/"))'''
+
 def addsub(numsent):
     while ("+" in numsent) and ("-" in numsent):
         if numsent.index("-") < numsent.index("+"):
-            numsent[numsent.index("-")-1] = int(numsent[numsent.index("-")-1]) - int(numsent[numsent.index("-")+1])
+            numsent[numsent.index("-")-1] = float(numsent[numsent.index("-")-1]) - float(numsent[numsent.index("-")+1])
             numsent.pop(numsent.index("-")+1)
             numsent.pop(numsent.index("-"))
         elif numsent.index("+") < numsent.index("-"):
-            numsent[numsent.index("+")-1] = int(numsent[numsent.index("+")-1]) + int(numsent[numsent.index("+")+1])
+            numsent[numsent.index("+")-1] = float(numsent[numsent.index("+")-1]) + float(numsent[numsent.index("+")+1])
             numsent.pop(numsent.index("+")+1)
             numsent.pop(numsent.index("+"))
     while "+" in numsent:
-        numsent[numsent.index("+")-1] = int(numsent[numsent.index("+")-1]) + int(numsent[numsent.index("+")+1])
+        numsent[numsent.index("+")-1] = float(numsent[numsent.index("+")-1]) + float(numsent[numsent.index("+")+1])
         numsent.pop(numsent.index("+")+1)
         numsent.pop(numsent.index("+"))
     while "-" in numsent:
-        numsent[numsent.index("-")-1] = int(numsent[numsent.index("-")-1]) - int(numsent[numsent.index("-")+1])
+        numsent[numsent.index("-")-1] = float(numsent[numsent.index("-")-1]) - float(numsent[numsent.index("-")+1])
         numsent.pop(numsent.index("-")+1)
         numsent.pop(numsent.index("-"))
 
@@ -21,19 +27,19 @@ def addsub(numsent):
 def multdiv(numsent):
     while ("/" in numsent) and ("*" in numsent):
         if numsent.index("/") < numsent.index("*"):
-            numsent[numsent.index("/")-1] = int(numsent[numsent.index("/")-1]) / int(numsent[numsent.index("/")+1])
+            numsent[numsent.index("/")-1] = float(numsent[numsent.index("/")-1]) / float(numsent[numsent.index("/")+1])
             numsent.pop(numsent.index("/")+1)
             numsent.pop(numsent.index("/"))
         elif numsent.index("*") < numsent.index("/"):
-            numsent[numsent.index("*")-1] = int(numsent[numsent.index("*")-1]) * int(numsent[numsent.index("*")+1])
+            numsent[numsent.index("*")-1] = float(numsent[numsent.index("*")-1]) * float(numsent[numsent.index("*")+1])
             numsent.pop(numsent.index("*")+1)
             numsent.pop(numsent.index("*"))
     while "*" in numsent:
-        numsent[numsent.index("*")-1] = int(numsent[numsent.index("*")-1]) * int(numsent[numsent.index("*")+1])
+        numsent[numsent.index("*")-1] = float(numsent[numsent.index("*")-1]) * float(numsent[numsent.index("*")+1])
         numsent.pop(numsent.index("*")+1)
         numsent.pop(numsent.index("*"))
     while "/" in numsent:
-        numsent[numsent.index("/")-1] = int(numsent[numsent.index("/")-1]) / int(numsent[numsent.index("/")+1])
+        numsent[numsent.index("/")-1] = float(numsent[numsent.index("/")-1]) / float(numsent[numsent.index("/")+1])
         numsent.pop(numsent.index("/")+1)
         numsent.pop(numsent.index("/"))
 
