@@ -1,9 +1,3 @@
-'''numsent = ["2", "+", "8", "/", "2", "*", "4"]
-
-   numsent[numsent.index("/")-1] = int(numsent[numsent.index("/")-1]) / int(numsent[numsent.index("/")+1])
-   numsent.pop(numsent.index("/")+1)
-   numsent.pop(numsent.index("/"))'''
-
 def addsub(numsent):
     while ("+" in numsent) and ("-" in numsent):
         if numsent.index("-") < numsent.index("+"):
