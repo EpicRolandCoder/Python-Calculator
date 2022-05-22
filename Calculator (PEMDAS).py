@@ -1,3 +1,5 @@
+#Bugs: does not check to make sure that only numbers and operators are in the entered expression
+
 def addsub(numsent):
     while ("+" in numsent) and ("-" in numsent):
         if numsent.index("-") < numsent.index("+"):
@@ -72,11 +74,27 @@ def bracketsplit(numsent):
         bracketsplit(numsent)
     else:
         simplify(numsent)
-        print(numsent[0])
+        return(numsent)
 
-def calculate(numsent):
-    numsent = numsent.split()
-    bracketsplit(numsent)
+def calculate():
+    numsent = input("Enter Expression: ")
+    try:
+        numsent = numsent.split()
+        bracketsplit(numsent)
+        print("Your expression simplifies to: " + str(numsent[0]))
+    except:
+        numsent ="An error occured. Please enter 'continue' if you wish to try again. Enter anything else to exit: "
+        if numsent == 'continue':
+            calculate()
+        else:
+            print('Made by EpicRolandCoder')
+            exit()
+    if input("Please enter 'continue' if you wish to keep using the calculator. Enter anything else to exit: ") == 'continue':
+        calculate()
+    else:
+        print('Made by EpicRolandCoder')
+        exit()
 
-userinput = input("This calculator accepts PEMDAS operations. Keep spaces between numbers and operators. Enter an equation: ")
-calculate(userinput)
+print("This 'calculator' simplifies expressions with NUMBERS and PEMDAS OPERATIONS. Please keep spaces between numbers and operators when entering your expression")
+
+calculate()
